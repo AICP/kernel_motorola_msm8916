@@ -223,10 +223,7 @@ static ssize_t f_hidg_read(struct file *file, char __user *buffer,
 	 * call, taking into account its current read position.
 	 */
 	if (list->pos == req->actual) {
-		spin_lock_irqsave(&hidg->spinlock, flags);
-		list_del(&list->list);
 		kfree(list);
-		spin_unlock_irqrestore(&hidg->spinlock, flags);
 
 		req->length = hidg->report_length;
 		ret = usb_ep_queue(hidg->out_ep, req, GFP_KERNEL);
@@ -484,7 +481,7 @@ static void hidg_disable(struct usb_function *f)
 {
 	struct f_hidg *hidg = func_to_hidg(f);
 	struct f_hidg_req_list *list, *next;
-        unsigned long flags;
+	unsigned long flags;
 
 	usb_ep_disable(hidg->in_ep);
 	hidg->in_ep->driver_data = NULL;
