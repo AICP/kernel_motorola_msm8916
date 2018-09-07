@@ -9,3 +9,15 @@ config CLUSTER_PLUG
           This hotplug implementation always keeps the big cluster
           online, and only activates the little cluster for heavy
           parallel loads.
+
+config ALUCARD_HOTPLUG
+	bool "Enable alucard-hotplug cpu hotplug driver"
+ 	default y
+ 	help
+ 	  Generic Alucard-hotplug cpu hotplug driver for ARM SOCs
+
+config MSM_SLEEPER
+ 	bool "CPU hotplug driver"
+ 	default y
+ 	help
+ 	  CPU hotplug driver
