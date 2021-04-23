@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8c9daec_8e2edc70",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1682
+      },
+      "writtenOn": "2021-04-23T00:56:49Z",
+      "side": 1,
+      "message": "Solves 8916, but makes a mess into 8939, solves a warn but breaks on runtime",
+      "revId": "716ce69303e660615918df844e2dc0c858a95120",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b"
+    }
+  ]
+}
